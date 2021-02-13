@@ -39,21 +39,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var Flu_count = 0; // creates a variable known as flu_count and stores the initial value as zero. (tally of symptoms leaning towards cold diagnosis)
 	var resultText = document.getElementById("results"); // creates variable for our actual final result
 
-        function allergyAdd(){
-		allergy_count = allergy_count + 1; // this function will help us add one each time a symptom is linked to allergies.
+        function covidAdd(){
+		Covid_count = Covid_count + 1; // this function will help us add one each time a symptom is linked to covid.
 		
         }
 
-        function coldAdd(){
-		cold_count = cold_count + 1; // this function will help us add one each time a symptom is linked to cold.
+        function fluAdd(){
+		flu_count = flu_count + 1; // this function will help us add one each time a symptom is linked to flu.
         }
-	var allergyPercent=0; // initial value for variable of allergy in  percentage form
-	var coldPercent=0; // initial value for variable of cold in  percentage form
+	var covidPercent=0; // initial value for variable of covid in  percentage form
+	var fluPercent=0; // initial value for variable of flu in  percentage form
 	function results(){ // function that allows us to get our final result
-		var allergyPercent= allergy_count/ (allergy_count + cold_count) * 100; // a variable to create percent likelihood of allergies
-		var coldPercent= cold_count/ (allergy_count+ cold_count)* 100; // a variable to create percent likelihood of cold
+		var covidPercent= covid_count/ (covid_count + flu_count) * 100; // a variable to create percent likelihood of covid
+		var fluPercent= flu_count/ (covid_count+ flu_count)* 100; // a variable to create percent likelihood of flu
 		var resultText = document.getElementById("results"); // 
-		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%<br> Probability it is a cold =" + coldPercent + "%"; 
+		resultText.innerHTML = "Probability it is allergies =" + covidPercent + "%<br> Probability it is a cold =" + fluPercent + "%"; 
 
         }
   	</script>
