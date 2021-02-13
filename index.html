@@ -45,15 +45,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }
 
         function fluAdd(){
-		flu_count = flu_count + 1; // this function will help us add one each time a symptom is linked to flu.
+		allergy_count = allergy_count + 1; // this function will help us add one each time a symptom is linked to flu.
         }
 	var covidPercent=0; // initial value for variable of covid in  percentage form
 	var fluPercent=0; // initial value for variable of flu in  percentage form
 	function results(){ // function that allows us to get our final result
-		var covidPercent= covid_count/ (covid_count + flu_count) * 100; // a variable to create percent likelihood of covid
-		var fluPercent= flu_count/ (covid_count+ flu_count)* 100; // a variable to create percent likelihood of flu
+		var covidPercent= covid_count/ (covid_count + allergy_count) * 100; // a variable to create percent likelihood of covid
+		var allergyPercent= allergy_count/ (covid_count+ allergy_count)* 100; // a variable to create percent likelihood of flu
 		var resultText = document.getElementById("results"); // 
-		resultText.innerHTML = "Probability it is allergies =" + covidPercent + "%<br> Probability it is a cold =" + fluPercent + "%"; 
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%<br> Probability it is covid =" + covidPercent + "%"; 
 
         }
   	</script>
@@ -103,8 +103,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
     	<div id="content" class="w3-container"> 
         	<p>Do you have red, swollen, or watery eyes?</p>   <!-- Inputs Question on Page 2-->
-	<a href="#two" onclick="covidAdd();" class="w3-btn w3-red"> Yes </a> <!-- This button says Yes in response to above question and stores data-->
-	<a href="#two" onclick="fluAdd();" class="w3-btn w3-green"> No </a> <!-- This button says No in response above question and stores data-->
+	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-red"> Yes </a> <!-- This button says Yes in response to above question and stores data-->
+	<a href="#two" onclick="covidAdd();" class="w3-btn w3-green"> No </a> <!-- This button says No in response above question and stores data-->
     	</div>
 </div>
 
